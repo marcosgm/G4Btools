@@ -6,3 +6,15 @@ Once validated, a website will show some parameters of the Google Apps ecosystem
 -Postini quarantined mails from gmail users
 -Docs' last edition (who, when)
 -User privileges, license status
+
+Using as a reference the new doc at
+http://code.google.com/intl/en/appengine/docs/python/gettingstartedpython27/
+
+
+
+NOTA sobre threadsafe en app.yaml
+Si threadsafe=True, la aplicacion la refiero como helloworld.app
+Si threadsafe=False, la aplicacion la refiero como helloworld.py
+
+CURRENT ISSUES= cansado de tener problemas de librerias en python, todo diferente dentro del Aptana, usando el GAE launcher, subiendo a google, todo resultados diferentes.
+Los python paths son todos diferentes, ya no se si debo poner librerias en el SRC, o enlazarlas, o instalarlas en sistema y esperar a que runtime lo encuentre
