@@ -7,7 +7,3 @@ threadsafe: true
 handlers:
 - url: /.*
   script: helloworld.app
-
-libraries:
-- name: jinja2
-  version: latest

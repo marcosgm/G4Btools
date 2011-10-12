@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <title>
+      {% block title %}AppEngine{% endblock %}
+   </title>
+   <link href="/static/glike.css" rel="stylesheet"
+         type="text/css" />
+   <script type="text/javascript" 
+           src="/static/js/jquery-1.2.6.min.js">
+   </script>
+ </head>
+ <body>
+   <div id="header">
+      <h1><a href="index.htm">App Engine</a></h1>
+      <ul>
+        <li><a href="sites.htm"
+              {% ifequal path '/sites.htm' %}
+                    class="selected"
+              {% endifequal %}
+             >Sites</a></li>
+        <li><a href="topics.htm" 
+              {% ifequal path '/topics.htm' %}
+                    class="selected"
+              {% endifequal %}
+            >Topics</a></li>
+      {% ifnotequal username None %}
+        <li><a href="/chat"
+              {% ifequal path '/chat' %}
+                    class="selected"
+              {% endifequal %}
+            >Chat</a></li>
+      {% endifnotequal %}
+      {% ifequal username None %}
+        <li><a href="/login"
+              {% ifequal path '/login' %}
+                    class="selected"
+              {% endifequal %}
+            >Login</a></li>
+      {% else %}
+        <li><a href="/logout">Logout ({{username}})</a></li>
+      {% endifequal %}
+      </ul>
+   </div>
+   <div id="bodycontent">
+      {% block bodycontent %}
+           Replace this
+      {% endblock %}
+   </div>
+ </body>
+</html>

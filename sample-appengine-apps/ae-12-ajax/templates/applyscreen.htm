@@ -1,0 +1,20 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+      <h1>New Account Request</h1>
+      <p>
+      Please enter your information below:
+      </p>
+      <form method="post" action="/apply">
+      Name: <input type="text" name="name"/> <br/>
+      Account: <input type="text" name="account"/> <br>
+      Password: <input type="password" name="password"/> <br/>
+      <input type="submit" value="Create"/> 
+      <input type="submit" value="Cancel" 
+          onclick="window.location='/'; return false;"/>
+      </p>
+      {% ifnotequal error None %}
+       <p>
+       {{ error }}
+       </p>
+      {% endifnotequal %}
+{% endblock %}

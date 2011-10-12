@@ -1,0 +1,21 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+      <h2>Please Log In</h2>
+      <p>
+      Please enter your id and password to log in to this site.
+      </p>
+      <form method="post" action="/login">
+      Account: <input type="text" name="account"/> <br>
+      Password: <input type="password" name="password"/> <br/>
+      <input type="submit" value="Login"/> 
+      <input type="submit" value="Cancel" 
+          onclick="window.location='/'; return false;"/>
+      <input type="submit" value="New Account" 
+          onclick="window.location='/apply'; return false;"/>
+      </form>
+      {% ifnotequal error None %}
+       <p>
+       {{ error }}
+       </p>
+      {% endifnotequal %}
+{% endblock %}

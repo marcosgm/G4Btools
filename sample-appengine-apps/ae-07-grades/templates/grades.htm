@@ -1,0 +1,20 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+      <h1>Application Engine: Grades</h1>
+      <p>
+      This form figures the total points in the App Engine 
+      class given the exam and homework points.
+      </p>
+      <form method="post" action="/grades">
+      Exam Points (max 100): <input type="text" name="exam"/> <br>
+      Homework Points (max 100): <input type="text" name="homework"/> <br>
+      <input type="submit" name="homework"/> <br>
+      </form>
+      </p>
+      {% ifnotequal error None %}
+       <p>
+       {{ error }}
+       </p>
+      {% endifnotequal %}
+      <!-- http://docs.djangoproject.com/en/dev/ref/templates/builtins/?from=olddocs#ifequal -->
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "_base.htm" %}
+{% block bodycontent %}
+      <h1>AppEngine Chat</h1>
+      <form method="post" action="/chat">
+      <p>
+      <input type="text" name="message" size="60"/>
+      <input type="submit" value="Chat"/> 
+      </p>
+      </form>
+      {% ifnotequal error None %}
+       <p>
+       {{ error }}
+       </p>
+      {% endifnotequal %}
+      <div id="chatcontent">
+          Loading...
+          <!-- <img src="/static/spinning.gif" alt="Loading..."/> -->
+      </div>
+<script type="text/javascript"> /* <![CDATA[ */
+function updateMsg() { 
+$.ajax({
+  url: "/messages",
+  cache: false,
+  success: function(stuff){
+    $("#chatcontent").html(stuff);
+    setTimeout('updateMsg()', 10000);
+  }
+ }); 
+}
+updateMsg();
+/* ]]> */
+</script>
+{% endblock %}
