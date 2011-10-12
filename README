@@ -1,0 +1,8 @@
+This is a project to show Google Apps Enterprise information in a quick mode to authenticated users.
+Will use the Google Apps username as validation token.
+Once validated, a website will show some parameters of the Google Apps ecosystem, likeÑ
+-Gmail users, blocked users, % space used, IMAP users
+-Groups, members and security settings
+-Postini quarantined mails from gmail users
+-Docs' last edition (who, when)
+-User privileges, license status
