@@ -5,7 +5,14 @@
   <body>
   	Buenos dias. Introduzca los siguientes datos para acceder a los listados de Google Apps For business
     <form action="/groups" method="post">
-		<div>Dominio: <input type="text" name="domain" /> P.Ej. dominio.com</div>
+		<div>Dominio: <input type="text" name="domain" /> P.Ej. dominio.com NOTA: ACTUALMENTE IGNORADO</div>
+		<div>Usuario: <input type="text" name="username" /> NOTA: ponga usuario@dominio.com</div>
+		<div>Password: <input type="password" name="password" /></div>
+		<div><input type="submit" value="Consultar"></div>
+    </form>
+    Ahora lo mismo para ver la lista de usuarios
+    <form action="/users" method="post">
+		<div>Dominio: <input type="text" name="domain" /> P.Ej. dominio.com NOTA: ACTUALMENTE IGNORADO</div>
 		<div>Usuario: <input type="text" name="username" /> NOTA: ponga usuario@dominio.com</div>
 		<div>Password: <input type="password" name="password" /></div>
 		<div><input type="submit" value="Consultar"></div>

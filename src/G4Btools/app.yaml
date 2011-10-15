@@ -1,5 +1,5 @@
 application: g4btools
-version: 1
+version: 2
 runtime: python
 api_version: 1
 #threadsafe: true
@@ -12,5 +12,3 @@ handlers:
 - url: /.*
   script: index.py
   
-- url: /groups.*
-  script: index.py
