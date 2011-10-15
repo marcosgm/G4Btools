@@ -19,7 +19,7 @@ class Groups(webapp.RequestHandler):
         domain=self.request.get('domain')
         username=self.request.get('username')
         password=self.request.get('password')
-        ga=GoogleApi(domain,username,password)
+        ga=GoogleApi(username,password)
         grupos=ga.getAllGroupsPermissions()
         
         template_values = {

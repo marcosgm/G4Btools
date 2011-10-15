@@ -2,6 +2,7 @@
 from os import remove
 from time import strftime
 import gdata.apps.service
+import gdata.apps.groups.service
 import gdata.docs.service
 import gdata.spreadsheet.service
 #import xlwt
@@ -66,7 +67,7 @@ class GoogleApi():
 #Esta clase getAllGroupsPermissions es mia
     def getAllGroupsPermissions(self):
         retorno=""
-        ggroups=gdata.apps.service.GroupsService(domain=self.URL)
+        ggroups=gdata.apps.groups.service.GroupsService(domain=self.URL)
         ggroups.ClientLogin(username=self.address, password=self.key, source="G4Btools")
         list=ggroups.RetrieveAllGroups()
         for group in list:
