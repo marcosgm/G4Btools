@@ -1,0 +1,16 @@
+application: g4btools
+version: 1
+runtime: python
+api_version: 1
+#threadsafe: true
+
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /.*
+  script: index.py
+  
+- url: /groups.*
+  script: index.py

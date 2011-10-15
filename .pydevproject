@@ -11,6 +11,8 @@
 <pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
 <path>/G4Btools/src</path>
 <path>/G4Btools/src/helloworld</path>
+<path>/G4Btools/src/helloworld/gdata</path>
+<path>/G4Btools/src/helloworld/atom</path>
 </pydev_pathproperty>
 <pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
 <path>${GOOGLE_APP_ENGINE}</path>
