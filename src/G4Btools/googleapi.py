@@ -91,7 +91,7 @@ class GoogleApi():
         ggroups=gdata.apps.groups.service.GroupsService(domain=self.URL)
         ggroups.ClientLogin(username=self.address, password=self.key, source="G4Btools")
         list=ggroups.RetrieveAllGroups()
-        for group in list:
+        for group in list: #mejorable con background tasks? http://code.google.com/intl/es-ES/appengine/docs/python/taskqueue/overview-push.html
             thisGroup=GroupContainer(group["groupId"])
             thisGroup.setMembers(ggroups.RetrieveAllMembers(group['groupId']))
             thisGroup.setEmailPermission(group["emailPermission"])
