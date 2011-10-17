@@ -4,6 +4,15 @@
     </head>
   <body>
     Mostrando Google Groups visibles al usuario {{username}} para el dominio {{domain}}<br/>
-	{{grupos}}
+	<ul>
+	{% for g in grupos %}
+		<li>{{g.name}}, permission={{g.emailPermission}}</li>
+		<ul type="disc">
+			{% for email in g.members %}
+			<li>{{email}}</li>
+			{% endfor %}			
+		</ul>
+	{% endfor %}
+	</ul>
   </body>
 </html>

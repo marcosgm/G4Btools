@@ -8,6 +8,24 @@ import gdata.spreadsheet.service
 #import xlwt
 #import xlrd
 
+class GroupContainer():
+    '''
+    Custom-made object to store Group Data
+    '''
+    def __init__(self,groupID):
+        self.name=groupID
+        self.members=[]
+        self.emailPermission=None
+        
+    def setMember(self, email):
+        self.members.append(email)
+        
+    def setMembers(self, emailList):
+        self.members=emailList[:]
+        
+    def setEmailPermission(self,permission):
+        self.emailPermission=permission
+        
 #authenticate credentials and login to Google Apps
 class GoogleApi():
     def __init__(self, mail, password):
@@ -66,12 +84,18 @@ class GoogleApi():
         return groups
 #Esta clase getAllGroupsPermissions es mia
     def getAllGroupsPermissions(self):
-        retorno=""
+        '''
+        Obtiene una lista de grupos, en formato GroupContainer
+        '''
+        retorno=[] #lista de GroupContainers
         ggroups=gdata.apps.groups.service.GroupsService(domain=self.URL)
         ggroups.ClientLogin(username=self.address, password=self.key, source="G4Btools")
         list=ggroups.RetrieveAllGroups()
         for group in list:
-            retorno=retorno+group["groupId"]+ " -> "+ group["emailPermission"]  +"<br>"
+            thisGroup=GroupContainer(group["groupId"])
+            thisGroup.setMembers(ggroups.RetrieveAllMembers(group['groupId']))
+            thisGroup.setEmailPermission(group["emailPermission"])
+            retorno.append(thisGroup)
         return retorno
     
     def getGroupMembers(self, groupName, printer = False):
